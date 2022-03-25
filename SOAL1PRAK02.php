@@ -19,7 +19,26 @@ if(isset($_POST["send"])){
     $nama2= $_POST["nama2"];
     $nama3= $_POST["nama3"];
 
-    if($nama1 < $nama2 && $nama3){
+    if($nama3 < $nama1 && $nama2){
+        echo"$nama3";
+        echo"<br>";
+
+        if($nama1 > $nama2){
+            echo"$nama2";
+            echo"<br>";
+            echo"$nama1";
+        }
+
+        elseif($nama1 < $nama2 ){
+            echo"$nama1";
+            echo"<br>";
+            echo"$nama2";
+            echo"<br>";
+        }
+    }
+    
+
+    elseif($nama1 < $nama2 && $nama3){
         echo"$nama1";
         echo"<br>";
 
@@ -41,43 +60,20 @@ if(isset($_POST["send"])){
     elseif($nama2 < $nama1 && $nama3){
         echo"$nama2";
         echo"<br>";
+        if($nama1 > $nama3){
+            echo"$nama3";
+            echo"<br>";
+            echo"$nama1";
+        }
 
-        if($nama1 < $nama3){
+        elseif($nama1 < $nama3){
             echo"$nama1";
             echo"<br>";
             echo"$nama3";
             echo"<br>";
         }
-
-        elseif($nama1 > $nama3){
-            echo"$nama3";
-            echo"<br>";
-            echo"$nama1";
-        }
+        
     }
-
-    elseif($nama3 > $nama1 && $nama2){
-        echo"$nama3";
-        echo"<br>";
-
-        if($nama1 < $nama2 ){
-            echo"$nama1";
-            echo"<br>";
-            echo"$nama2";
-            echo"<br>";
-        }
-
-        elseif($nama1 > $nama2){
-            echo"$nama2";
-            echo"<br>";
-            echo"$nama1";
-        }
-    }
-
- 
-   
 }
 
     ?>
-
-
