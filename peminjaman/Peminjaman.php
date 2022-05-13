@@ -2,19 +2,10 @@
 require('./Model.php');
 if (isset($_GET['id_peminjaman'])) {
     hapuspeminjaman($_GET['id_peminjaman']);
-}
-?>
+}?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Peminjaman</title>
-</head>
+<html>
 <body>
-    <a href="FormPeminjaman.php"><button>Tambah Data</button></a>
     <table border="1">
         <tr>
             <th>Tanggal Pinjam</th>
@@ -23,5 +14,6 @@ if (isset($_GET['id_peminjaman'])) {
         </tr>
         <?= tampildata("peminjaman") ?>
     </table>
+    <a href="FormPeminjaman.php"><button>Tambah Data</button></a>
 </body>
 </html>
