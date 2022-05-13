@@ -11,7 +11,6 @@ if (isset($_GET['id_buku'])) {
     <title>Buku</title>
 </head>
 <body>
-    <a href="FormBuku.php"><button>Tambah Data</button></a>
     <table border="1">
         <tr>
             <th>Judul Buku</th>
@@ -20,7 +19,9 @@ if (isset($_GET['id_buku'])) {
             <th>Tahun Terbit</th>
             <th>Aksi</th>
         </tr>
-        <?= tampildata("buku") ?>
+        <?php tampildata("buku") ?>
     </table>
+    <br>
+    <a href="FormBuku.php"><button>Tambah Data</button></a>
 </body>
 </html>
