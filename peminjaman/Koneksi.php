@@ -3,9 +3,9 @@ function koneksi()
 {
     try {
         $pdo_conn = new PDO(
-            'mysql:host=localhost;dbname=peminjaman',//atur sesuai nama database
-            'root',//atur sesuai username database
-            '',//atur sesuai password database
+            'mysql:host=localhost;dbname=peminjaman',
+            'root',
+            '',
             array(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION, PDO::ATTR_PERSISTENT => true)
         );
     } catch (PDOException $e) {
