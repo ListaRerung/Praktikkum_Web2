@@ -2,14 +2,9 @@
 require('./Model.php');
 if (isset($_GET['id_buku'])) {
     hapusbuku($_GET['id_buku']);
-}
-?>
+}?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Buku</title>
-</head>
+<html>
 <body>
     <table border="1">
         <tr>
