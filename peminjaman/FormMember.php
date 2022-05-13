@@ -2,7 +2,7 @@
 if (isset($_GET['id_member'])) {
     editmember();
 }
-// print_r($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,7 @@ if (isset($_GET['id_member'])) {
             </tr>
             <tr>
                 <td>
-                    tgl mendaftar
+                    Tanggal mendaftar
 
                 </td>
                 <td>
@@ -55,7 +55,7 @@ if (isset($_GET['id_member'])) {
             </tr>
             <tr>
                 <td>
-                    tgl Terakhir bayar
+                    Tanggal Terakhir bayar
                 </td>
                 <td>
                     <input type="date" name="tgl_terakhir_bayar" <?php echo (isset($_GET['id_member'])) ?  "value = " . $result[0]["tgl_terakhir_bayar"] . "" : "value = '' "; ?> required><br>
@@ -86,10 +86,7 @@ if (isset($_GET['id_member'])) {
         tambahdatamember($_POST['nama_member'], $_POST['nomor_member'], $_POST['alamat'], $tgl_daftar, $_POST['tgl_terakhir_bayar']);
     }
     if (isset($_POST['update'])) {
-        // $tgl_daftar = date_create($_POST['tgl_daftar']);
-        // $tgl_daftar = date_format($tgl_daftar,"Y-m-d H:i:s");
         $tgl_daftar = date('Y-m-d H:i:s', strtotime($_POST['tgl_daftar']));
-        // print_r($_POST);
         updatemember($_GET['id_member'],$_POST['nama_member'], $_POST['nomor_member'], $_POST['alamat'], $tgl_daftar, $_POST['tgl_terakhir_bayar']);
     }
     ?>
