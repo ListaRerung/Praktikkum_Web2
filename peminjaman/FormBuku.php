@@ -1,19 +1,8 @@
 <?php require('./Model.php');
 if (isset($_GET['id_buku'])) {
     editbuku();
-}
-// print_r($result);
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <?php echo (isset($_GET['id_buku'])) ? "<title>Update Data | Buku</title>": "<title>Tambah Data | Buku</title>" ?> 
-</head>
-
+}?>
+<html>
 <body>
     <form action="" method="post">
         <table>
@@ -54,8 +43,8 @@ if (isset($_GET['id_buku'])) {
                 </td>
             </tr>
             <tr>
-                <td></td>
                 <td>
+                    <br>
                     <?php 
                     if (isset($_GET['id_buku'])) {
                         echo "<button type=\"submit\" name=\"update\">Update</button>";
@@ -69,7 +58,6 @@ if (isset($_GET['id_buku'])) {
             </tr>
         </table>
     </form>
-
     <?php
     if (isset($_POST['submit'])) {
         tambahdatabuku($_POST['judul'], $_POST['penulis'], $_POST['penerbit'], $_POST['thnterbit']);
@@ -79,5 +67,4 @@ if (isset($_GET['id_buku'])) {
     }
     ?>
 </body>
-
 </html>
