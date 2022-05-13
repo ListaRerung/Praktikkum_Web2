@@ -1,7 +1,6 @@
 <?php
 require("./Koneksi.php");
 
-// membuat fungsi tampil
 function tampildata($nama_tabel)
 {
     $stmt = koneksi()->prepare("SELECT * FROM $nama_tabel");
@@ -57,7 +56,6 @@ function tampildata($nama_tabel)
     }
 }
 
-// membuat fungsi tambah
 function tambahdatamember($nama_member, $nomor_member, $alamat, $tgl_mendaftar, $tgl_terakhir_bayar)
 {
     $sql = "INSERT INTO `member` ( `nama_member`, `nomor_member`, `alamat`, `tgl_mendaftar`, `tgl_terakhir_bayar`) VALUES (:nama,:nomor_member,:alamat,:tgl_mendaftar,:tgl_terakhir_bayar)";
@@ -88,7 +86,6 @@ function tambahdatapeminjaman($tglpinjam, $tglkembali)
     }
 }
 
-// membuat fungsi edit
 function editmember()
 {
     $stmt = koneksi()->prepare("SELECT * FROM member where id_member=" . $_GET["id_member"]);
@@ -110,7 +107,6 @@ function editpeminjaman(){
 }
 
 
-// membuat fungsi update
 function updatemember($id, $nama_member, $no_member, $almt, $tgl_daftar, $tgl_terakhir_bayar)
 {
     $pdo_statement = koneksi()->prepare(
@@ -143,9 +139,6 @@ function updatepeminjaman($id, $tglpinjam, $tglkembali)
         header('location:Peminjaman.php');
     }
 }
-
-
-// membuat fungsi untuk hapus data
 
 function hapusmember($id_member)
 {
